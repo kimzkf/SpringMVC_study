@@ -17,7 +17,6 @@ public class HelloController {
     @RequestMapping(path = "/hello",method = {RequestMethod.GET,RequestMethod.POST},params ={"username"} )
         public String sayHello(){
             System.out.println("say hello!");
-        System.out.println("username");
             return "success";
         }
 
