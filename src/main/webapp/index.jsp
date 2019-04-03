@@ -18,7 +18,7 @@
     <h3>params请求参数绑定</h3>
     <a href="params/testParams?username=hahhah">params请求参数绑定</a>
     <h3>params封装JavaBean参数绑定</h3>
-   <form action="params/saveAccount" method="get">
+   <form action="params/saveAccount" method="post">
        <table>
            <tr>
                <td>名称</td>
