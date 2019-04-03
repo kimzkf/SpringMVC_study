@@ -17,5 +17,29 @@
      <a href="user/testRequestMapping">RequestMapping类注解入门程序</a>
     <h3>params请求参数绑定</h3>
     <a href="params/testParams?username=hahhah">params请求参数绑定</a>
+    <h3>params封装JavaBean参数绑定</h3>
+   <form action="params/saveAccount" method="get">
+       <table>
+           <tr>
+               <td>名称</td>
+               <td><input type="text" name="name" value=""/></td>
+           </tr>
+           <tr>
+               <td>金额</td>
+               <td><input type="text" name="money" value=""/></td>
+           </tr>
+           <tr>
+               <td>username</td>
+               <td><input type="text" name="user.username" value=""/></td>
+           </tr>
+           <tr>
+               <td>password</td>
+               <td><input type="text" name="user.password" value=""/></td>
+           </tr>
+           <tr>
+               <td><input type="submit" value="submit"></td>
+           </tr>
+       </table>
+   </form>
 </body>
 </html>
