@@ -19,6 +19,6 @@
         <property name="suffix" value=".jsp"></property><!--后缀名-->
     </bean>
 
-    <!--开启SpringMVC框架注解的支持-->
+    <!--开启SpringMVC框架注解的支持，处理器映射器，处理器适配器，视图解析器-->
     <mvc:annotation-driven></mvc:annotation-driven>
 </beans>

@@ -12,6 +12,8 @@
 </head>
 <body>
     <H3>SpringMVC入门demo</H3>
-     <a href="hello">入门程序</a>
+     <a href="user/hello?username=123456">RequestMapping方法注解入门程序</a>
+    <br/>
+     <a href="user/testRequestMapping">RequestMapping类注解入门程序</a>
 </body>
 </html>
