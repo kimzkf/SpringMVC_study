@@ -4,6 +4,9 @@
       作用：将请求中指定名称的参数给控制器中的形参赋值
       属性：value:请求参数中的名称
             requested:请求参数是否必须提供参数，默认，true
+@RequestBody:
+       作用：用于获取请求体内容，直接使用的得到的key=value&key=value...结构的数据，get请求不适用
+       属性：requested:是否必须有请求体，默认值true,true时，get方法报错；false时，get方法为null
 
 
 
