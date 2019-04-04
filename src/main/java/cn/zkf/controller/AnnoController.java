@@ -1,6 +1,7 @@
 package cn.zkf.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,6 +28,16 @@ public class AnnoController {
     public String testRequestBody(@RequestBody(required = true) String body){
         System.out.println("testRequestBody执行了。。。");
         System.out.println(body);
+        return  "success";
+    }
+    /**
+     * PathVariable占位符注解
+     * @return
+     */
+    @RequestMapping(path = "/testPathVariable/{sid}")
+    public String testpathVaribale(@PathVariable(name = "sid") String id){
+        System.out.println("testPathVariable执行了。。。");
+        System.out.println(id);
         return  "success";
     }
 }

@@ -34,5 +34,9 @@
         </tr>
     </table>
 </form>
+
+<hr/>
+<a href="anno/testPathVariable/hello">RequestParams</a>
+
 </body>
 </html>

@@ -7,6 +7,9 @@
 @RequestBody:
        作用：用于获取请求体内容，直接使用的得到的key=value&key=value...结构的数据，get请求不适用
        属性：requested:是否必须有请求体，默认值true,true时，get方法报错；false时，get方法为null
-
+@PathVariable
+       作用：用于绑定url中的占位符。eg：请求url中/delete/{id},这个{id}就是url占位符，是springMVC支持rest风格url一个重要标志
+       属性：value：用于指定url中占位符的名称
+            requested:是否提供占位符
 
 
