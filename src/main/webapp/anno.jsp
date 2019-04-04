@@ -38,5 +38,7 @@
 <hr/>
 <a href="anno/testPathVariable/hello">RequestParams</a>
 
+<hr/>
+<a href="anno/testCookieValue">CookieValue</a>
 </body>
 </html>

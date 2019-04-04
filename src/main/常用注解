@@ -3,13 +3,18 @@
 @RequestParam:
       作用：将请求中指定名称的参数给控制器中的形参赋值
       属性：value:请求参数中的名称
-            requested:请求参数是否必须提供参数，默认，true
+            required:请求参数是否必须提供参数，默认，true
 @RequestBody:
        作用：用于获取请求体内容，直接使用的得到的key=value&key=value...结构的数据，get请求不适用
-       属性：requested:是否必须有请求体，默认值true,true时，get方法报错；false时，get方法为null
+       属性：required:是否必须有请求体，默认值true,true时，get方法报错；false时，get方法为null
 @PathVariable
        作用：用于绑定url中的占位符。eg：请求url中/delete/{id},这个{id}就是url占位符，是springMVC支持rest风格url一个重要标志
        属性：value：用于指定url中占位符的名称
-            requested:是否提供占位符
+            required:是否提供占位符
+@CookieValue:
+        作用：用于把指定cookie名称的值传入控制器方法参数
+        属性：
+            value:指定cookie的名称
+            required:是否必须有此cookie
 
 

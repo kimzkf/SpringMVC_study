@@ -1,10 +1,7 @@
 package cn.zkf.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 常用注解
@@ -38,6 +35,16 @@ public class AnnoController {
     public String testpathVaribale(@PathVariable(name = "sid") String id){
         System.out.println("testPathVariable执行了。。。");
         System.out.println(id);
+        return  "success";
+    }
+    /**
+     * CookieValue:获取cookie的值
+     * @return
+     */
+    @RequestMapping(path = "/testCookieValue")
+    public String testCookieValue(@CookieValue(value = "JSESSIONID") String cookieValue){
+        System.out.println("testCookieValue执行了。。。");
+        System.out.println(cookieValue);
         return  "success";
     }
 }
