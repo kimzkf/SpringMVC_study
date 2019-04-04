@@ -1,7 +1,10 @@
 package cn.zkf.controller;
 
+import cn.zkf.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 /**
  * 常用注解
@@ -46,5 +49,29 @@ public class AnnoController {
         System.out.println("testCookieValue执行了。。。");
         System.out.println(cookieValue);
         return  "success";
+    }
+    /**
+     * ModelAttribute:showUser先执行
+     * @return
+     */
+    @RequestMapping(path = "/testModelAttribute")
+    public String testModelAttribute(User user){
+        System.out.println("testModelAttribute执行了。。。");
+        System.out.println(user);
+        return  "success";
+    }
+
+    /**
+     * ModelAttribute该方法先执行
+     */
+    @ModelAttribute
+    public User  showUser(String username){
+        System.out.println("showUser执行了。。。");
+        //通过用户查询数据库（模拟）
+        User user=new User();
+        user.setUsername(username);
+        user.setPassword("123");
+        user.setDate(new Date());
+        return user;
     }
 }

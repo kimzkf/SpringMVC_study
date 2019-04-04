@@ -40,5 +40,22 @@
 
 <hr/>
 <a href="anno/testCookieValue">CookieValue</a>
+<hr/>
+<h3>ModelAttribute</h3>
+<form action="anno/testModelAttribute" method="post">
+    <table>
+        <tr>
+            <td>username</td>
+            <td><input type="text" name="username" value=""/></td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td><input type="text" name="password" value=""/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="submit"></td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
