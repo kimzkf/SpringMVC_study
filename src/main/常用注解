@@ -1,0 +1,9 @@
+@Controller:作用在控制类中
+@RequestMapping：属性path,value,params,作用控制类或方法中
+@RequestParam:
+      作用：将请求中指定名称的参数给控制器中的形参赋值
+      属性：value:请求参数中的名称
+            requested:请求参数是否必须提供参数，默认，true
+
+
+

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Account implements Serializable {
     private  String name;
-    private double money;
+    private Double money;
     private User user;
     public String getName() {
         return name;
@@ -14,11 +14,11 @@ public class Account implements Serializable {
         this.name = name;
     }
 
-    public double getMoney() {
+    public Double getMoney() {
         return money;
     }
 
-    public void setMoney(double money) {
+    public void setMoney(Double money) {
         this.money = money;
     }
 

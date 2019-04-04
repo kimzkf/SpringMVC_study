@@ -19,6 +19,17 @@
         <property name="suffix" value=".jsp"></property><!--后缀名-->
     </bean>
 
+    <!--配置自定义类型转换器-->
+    <bean id="conversionServiceFactoryBean" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="cn.zkf.utils.StringToDateConverter"></bean>
+            </set>
+        </property>
+    </bean>
+
     <!--开启SpringMVC框架注解的支持，处理器映射器，处理器适配器，视图解析器-->
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <!--使类型转换生效conversion-service="conversionServiceFactoryBean"-->
+    <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"></mvc:annotation-driven>
+
 </beans>
