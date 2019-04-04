@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.Map;
 
 /**
  * 常用注解
@@ -21,7 +22,7 @@ public class AnnoController {
 
     /**
      * 获取到请求体内容
-     * @param name
+     * @param
      * @return
      */
     @RequestMapping(path = "/testRequestBody")
@@ -55,16 +56,28 @@ public class AnnoController {
      * @return
      */
     @RequestMapping(path = "/testModelAttribute")
-    public String testModelAttribute(User user){
+    public String testModelAttribute(@ModelAttribute("abc") User user){
         System.out.println("testModelAttribute执行了。。。");
         System.out.println(user);
         return  "success";
     }
-
     /**
-     * ModelAttribute该方法先执行
-     */
+    * ModelAttribute该方法先执行（无返回值）
+    */
     @ModelAttribute
+    public void  showUser(String username, Map<String,User> map){
+        System.out.println("showUser执行了。。。");
+        //通过用户查询数据库（模拟）
+        User user=new User();
+        user.setUsername(username);
+        user.setPassword("123");
+        user.setDate(new Date());
+        map.put("abc",user);
+    }
+    /**
+     * ModelAttribute该方法先执行（有返回值）
+     */
+    /*@ModelAttribute
     public User  showUser(String username){
         System.out.println("showUser执行了。。。");
         //通过用户查询数据库（模拟）
@@ -73,5 +86,5 @@ public class AnnoController {
         user.setPassword("123");
         user.setDate(new Date());
         return user;
-    }
+    }*/
 }
