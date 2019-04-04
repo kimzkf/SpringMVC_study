@@ -57,5 +57,11 @@
         </tr>
     </table>
 </form>
+
+
+<hr/>
+<a href="anno/testSessionAttribute">SessionAttribute</a>
+<a href="anno/getSessionAttribute">getSessionAttribute</a>
+<a href="anno/delSessionAttribute">delSessionAttribute</a>
 </body>
 </html>
