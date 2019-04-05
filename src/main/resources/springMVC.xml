@@ -39,6 +39,9 @@
         <property name="maxUploadSize" value="10485760"></property>
     </bean>
 
+    <!--配置异常处理器,自己写的异常处理器-->
+    <bean id="sysExceptionResolver" class="cn.zkf.exception.SysExceptionResolver"></bean>
+
     <!--开启SpringMVC框架注解的支持，处理器映射器，处理器适配器，视图解析器-->
     <!--使类型转换生效conversion-service="conversionServiceFactoryBean"-->
     <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"></mvc:annotation-driven>

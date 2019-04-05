@@ -17,5 +17,7 @@
     <br/>
     <input type="submit" value="submit"/>
 </form>
+<hr/>
+<a href="fileUp/testException" >异常处理测试</a>
 </body>
 </html>
