@@ -16,37 +16,39 @@ import java.util.Date;
 @RequestMapping(path = "/us")
 public class UsController {
     /**
-     *返回值字符串
+     * 返回值字符串
+     *
      * @param model
      * @return
      */
     @RequestMapping(path = "/testResponseString")
-    public String testResponseString(Model model){
+    public String testResponseString(Model model) {
         System.out.println("testResponseString...");
         //模拟查询数据
-        User user=new User();
+        User user = new User();
         user.setUsername("123");
         user.setPassword("hhh");
         user.setDate(new Date());
         //model对象
-        model.addAttribute("user",user);
+        model.addAttribute("user", user);
         return "success";
     }
 
     /**
-     *无返回值void
+     * 无返回值void
      * 请求转发一次请求，不用编写项目名称
+     *
      * @param
      * @return
      */
     @RequestMapping(path = "/testResponseVoid")
-    public void testResponseVoid(HttpServletRequest request, HttpServletResponse response)throws Exception{
+    public void testResponseVoid(HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("testResponseVoid...");
         //编写请求转发程序
-       // request.getRequestDispatcher("/WEB-INF/pages/success.jsp").forward(request,response);
+        // request.getRequestDispatcher("/WEB-INF/pages/success.jsp").forward(request,response);
 
         //重定向程序,2次请求
-        response.sendRedirect(request.getContextPath()+"/index.jsp");
+        response.sendRedirect(request.getContextPath() + "/index.jsp");
 
         //设置中文乱码
         response.setCharacterEncoding("UTF-8");
@@ -56,23 +58,25 @@ public class UsController {
         response.getWriter().print("hello");
         return;
     }
+
     /**
-     *返回ModelAndView对象
+     * 返回ModelAndView对象
+     *
      * @param model
      * @return
      */
     @RequestMapping(path = "/testModelAndView")
-    public ModelAndView testModelAndView(Model model){
+    public ModelAndView testModelAndView(Model model) {
         System.out.println("testModelAndView...");
-        ModelAndView modelAndView=new ModelAndView();
+        ModelAndView modelAndView = new ModelAndView();
         //模拟查询数据
-        User user=new User();
+        User user = new User();
         user.setUsername("176543");
         user.setPassword("hhh");
         user.setDate(new Date());
 
         //把user对象存入到ModelAndView对象中，也会把user对象存入到request对象
-        modelAndView.addObject("user",user);
+        modelAndView.addObject("user", user);
 
         //设置跳转页面,用了视图解析器
         modelAndView.setViewName("success");
@@ -80,13 +84,13 @@ public class UsController {
     }
 
     /**
+     * 使用关键字的方式进行转发或重定向
      *
-     *使用关键字的方式进行转发或重定向
      * @param
      * @return
      */
     @RequestMapping(path = "/testForwardOrRedirect")
-    public String testForwardOrRedirect(){
+    public String testForwardOrRedirect() {
         System.out.println("testForwardOrRedirect...");
 
         //请求的转发
@@ -97,12 +101,13 @@ public class UsController {
     }
 
     /**
-     *模拟ajax异步与响应
+     * 模拟ajax异步与响应
      * RequestBody:获得请求体内容
-     *ResponseBody:自动转json
+     * ResponseBody:响应自动转json
      */
     @RequestMapping(path = "/testAjax")
-    public @ResponseBody User testAjax(@RequestBody User user){
+    public @ResponseBody
+    User testAjax(@RequestBody User user) {
         System.out.println("testAjax...");
 
         //客户端发送ajax请求，传的json字符串，后端已经把json字符串封装进user对象中

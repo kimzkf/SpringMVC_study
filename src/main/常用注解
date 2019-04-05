@@ -35,6 +35,10 @@
 @ResponseBody:响应json数据，先在springmvc.xml里面进行配置
 
 
+文件上传：form表单enctype=multipart/form-data    method=post      <input type="file" />
+         配置文件解析器，id值必须为multipartResolver
+
+
 
 
 
