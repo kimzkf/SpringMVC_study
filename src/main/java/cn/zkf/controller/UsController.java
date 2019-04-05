@@ -3,7 +3,9 @@ package cn.zkf.controller;
 import cn.zkf.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -92,6 +94,24 @@ public class UsController {
 
         //请求的重定向;重定向不能访问WEB-INF下的目录文件
         return "redirect:/index.jsp";
+    }
+
+    /**
+     *模拟ajax异步与响应
+     * RequestBody:获得请求体内容
+     *ResponseBody:自动转json
+     */
+    @RequestMapping(path = "/testAjax")
+    public @ResponseBody User testAjax(@RequestBody User user){
+        System.out.println("testAjax...");
+
+        //客户端发送ajax请求，传的json字符串，后端已经把json字符串封装进user对象中
+        System.out.println(user);
+
+        //作响应，模拟数据库查询
+        user.setUsername("haha");
+        user.setDate(new Date());
+        return user;
     }
 
 }
