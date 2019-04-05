@@ -32,6 +32,8 @@
             type：用于指定存入的数据类型
 @SessionAttributes只能用于类上面
 
+@ResponseBody:响应json数据，先在springmvc.xml里面进行配置
+
 
 
 

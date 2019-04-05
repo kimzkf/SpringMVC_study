@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="js/jquery.min.js"></script>
 </head>
 <body>
 <a href="us/testResponseString" >testResponseString</a>
@@ -19,5 +20,15 @@
 <hr/>
 <a href="us/testForwardOrRedirect" >testForwardOrRedirect</a>
 <hr/>
+<button id="aj">发送ajax请求</button>
+<hr/>
 </body>
 </html>
+<script>
+    //页面加载
+    $(function () {
+        $("#aj").click(function () {
+            alert("hello!");
+        });
+    });
+</script>
