@@ -13,6 +13,10 @@
 <body>
 <h3>入门成功</h3>
 ${msg }
+<hr/>
 ${sessionScope }
+<hr/>
+${user.toString() }
+<hr/>
 </body>
 </html>
