@@ -15,7 +15,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping(path = "/anno")
-@SessionAttributes(value = {"msg"})//把mmsg=hello存入到session域中
+@SessionAttributes(value = {"msg"})//把msg=hello存入到session域中
 public class AnnoController {
     @RequestMapping(path = "/testRequestParams")
     public String testRequestParams(@RequestParam(value = "username") String name){

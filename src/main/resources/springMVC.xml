@@ -42,6 +42,21 @@
     <!--配置异常处理器,自己写的异常处理器-->
     <bean id="sysExceptionResolver" class="cn.zkf.exception.SysExceptionResolver"></bean>
 
+
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <!--第一个拦截器-->
+        <mvc:interceptor>
+            <!--要拦截的具体方法,表示：工程名/uc/XXXX,进行拦截-->
+            <mvc:mapping path="/uc/*"/>
+            <!--不要拦截的方法-->
+            <!--<mvc:exclude-mapping path=""></mvc:exclude-mapping>-->
+
+            <!--配置拦截器对象-->
+            <bean id="myInterceptor" class="cn.zkf.interceptor.MyInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <!--开启SpringMVC框架注解的支持，处理器映射器，处理器适配器，视图解析器-->
     <!--使类型转换生效conversion-service="conversionServiceFactoryBean"-->
     <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"></mvc:annotation-driven>
